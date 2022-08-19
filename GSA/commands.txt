@@ -1,0 +1,3 @@
+stressapptest -s 10 -M 256 -W -m 1
+stressapptest -s 5 -M 128 -W -m 1
+stressapptest -s 7 -M 256 -W -m 2

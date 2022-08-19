@@ -1,0 +1,1 @@
+./src/multichase/multichase -a -s 256 -m 1g -c simple -n 30

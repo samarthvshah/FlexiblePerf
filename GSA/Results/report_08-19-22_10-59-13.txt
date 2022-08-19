@@ -1,0 +1,57 @@
+Log: Commandline - stressapptest -s 10 -M 256 -W -m 1
+Stats: SAT revision 1.0.6_autoconf, 64 bit binary
+Log: buildd @ lgw01-amd64-029 on Sun Mar 22 18:14:26 UTC 2020 from open source release
+Log: 1 nodes, 4 cpus.
+Log: Prefer plain malloc memory allocation.
+Log: Using memaligned allocation at 0x7fd087fff000.
+Stats: Starting SAT, 256M, 10 seconds
+Log: Region mask: 0x1
+Stats: Found 0 hardware incidents
+Stats: Completed: 162250.00M in 10.00s 16223.46MB/s, with 0 hardware incidents, 0 errors
+Stats: Memory Copy: 162250.00M at 16224.78MB/s
+Stats: File Copy: 0.00M at 0.00MB/s
+Stats: Net Copy: 0.00M at 0.00MB/s
+Stats: Data Check: 0.00M at 0.00MB/s
+Stats: Invert Data: 0.00M at 0.00MB/s
+Stats: Disk: 0.00M at 0.00MB/s
+
+Status: PASS - please verify no corrected errors
+
+Log: Commandline - stressapptest -s 5 -M 128 -W -m 1
+Stats: SAT revision 1.0.6_autoconf, 64 bit binary
+Log: buildd @ lgw01-amd64-029 on Sun Mar 22 18:14:26 UTC 2020 from open source release
+Log: 1 nodes, 4 cpus.
+Log: Prefer plain malloc memory allocation.
+Log: Using memaligned allocation at 0x7fd64bfff000.
+Stats: Starting SAT, 128M, 5 seconds
+Log: Region mask: 0x1
+Stats: Found 0 hardware incidents
+Stats: Completed: 82834.00M in 5.00s 16565.14MB/s, with 0 hardware incidents, 0 errors
+Stats: Memory Copy: 82834.00M at 16566.73MB/s
+Stats: File Copy: 0.00M at 0.00MB/s
+Stats: Net Copy: 0.00M at 0.00MB/s
+Stats: Data Check: 0.00M at 0.00MB/s
+Stats: Invert Data: 0.00M at 0.00MB/s
+Stats: Disk: 0.00M at 0.00MB/s
+
+Status: PASS - please verify no corrected errors
+
+Log: Commandline - stressapptest -s 7 -M 256 -W -m 2
+Stats: SAT revision 1.0.6_autoconf, 64 bit binary
+Log: buildd @ lgw01-amd64-029 on Sun Mar 22 18:14:26 UTC 2020 from open source release
+Log: 1 nodes, 4 cpus.
+Log: Prefer plain malloc memory allocation.
+Log: Using memaligned allocation at 0x7fa543fff000.
+Stats: Starting SAT, 256M, 7 seconds
+Log: Region mask: 0x1
+Stats: Found 0 hardware incidents
+Stats: Completed: 178132.00M in 10.00s 17811.29MB/s, with 0 hardware incidents, 0 errors
+Stats: Memory Copy: 178132.00M at 17812.65MB/s
+Stats: File Copy: 0.00M at 0.00MB/s
+Stats: Net Copy: 0.00M at 0.00MB/s
+Stats: Data Check: 0.00M at 0.00MB/s
+Stats: Invert Data: 0.00M at 0.00MB/s
+Stats: Disk: 0.00M at 0.00MB/s
+
+Status: PASS - please verify no corrected errors
+
