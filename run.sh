@@ -47,6 +47,16 @@ else
 	
 fi
 
+# Ask if the user wants to collect sensor data
+echo ""
+read -p "Do you want to collect sensor data? (yes or no, default is yes): " sensors
+
+# Setting default value
+if [ "$sensors" = "" ]; then
+	sensors="yes"
+fi
+
+
 
 
 # Main Loop
@@ -57,15 +67,52 @@ for workload in $workloads
 do
 	if [ "$workload" = "stress" ]; then
 	
-		bash GSA/commands.txt >> GSA/Results/report_${platform}_${date}.txt
+		# Starting sensor data collection
+		if [ "$sensors" = "yes" ]; then
+			sh sensor_data.sh GSA/Results/${platform}_${date}/gsa_sensor_data_${platform}_${date}.txt &
+			sensor_process=$!
+		fi
+	
+		mkdir GSA/Results/${platform}_${date}
+		bash GSA/commands.txt >> GSA/Results/${platform}_${date}/report_${platform}_${date}.txt
+		
+		# Ending sensor data collection
+		if [ "$sensors" = "yes" ]; then
+			sudo kill $sensor_process
+		fi
+
 	
 	elif [ "$workload" = "mlc" ]; then
+	
+		# Starting sensor data collection
+		if [ "$sensors" = "yes" ]; then
+			sh sensor_data.sh MLC/Results/${platform}_${date}/mlc_sensor_data_${platform}_${date}.txt &
+			sensor_process=$!
+		fi
 		
-		bash MLC/commands.txt >> MLC/Results/report_${platform}_${date}.txt
+		mkdir MLC/Results/${platform}_${date}
+		bash MLC/commands.txt >> MLC/Results/${platform}_${date}/report_${platform}_${date}.txt
+		
+		# Ending sensor data collection
+		if [ "$sensors" = "yes" ]; then
+			sudo kill $sensor_process
+		fi
 	
 	elif [ "$workload" = "multichase" ]; then
 	
-		bash MCML/commands.txt >> MCML/Results/report_${platform}_${date}.txt
+		# Starting sensor data collection
+		if [ "$sensors" = "yes" ]; then
+			sh sensor_data.sh MCML/Results/${platform}_${date}/mcml_sensor_data_${platform}_${date}.txt &
+			sensor_process=$!
+		fi
+	
+		mkdir MCML/Results/${platform}_${date}
+		bash MCML/commands.txt >> MCML/Results/${platform}_${date}/report_${platform}_${date}.txt
+		
+		# Ending sensor data collection
+		if [ "$sensors" = "yes" ]; then
+			sudo kill $sensor_process
+		fi
 		
 	else 
 		
