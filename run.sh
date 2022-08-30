@@ -68,13 +68,14 @@ do
 	if [ "$workload" = "stress" ]; then
 	
 		# Starting sensor data collection
+		mkdir GSA/Results/${platform}_${date}
+		
 		if [ "$sensors" = "yes" ]; then
 			sh sensor_data.sh GSA/Results/${platform}_${date}/gsa_sensor_data_${platform}_${date}.txt &
 			sensor_process=$!
 		fi
-	
-		mkdir GSA/Results/${platform}_${date}
-		bash GSA/commands.txt >> GSA/Results/${platform}_${date}/report_${platform}_${date}.txt
+
+		bash GSA/commands.txt >> GSA/Results/${platform}_${date}/gsa_report_${platform}_${date}.txt
 		
 		# Ending sensor data collection
 		if [ "$sensors" = "yes" ]; then
@@ -85,13 +86,14 @@ do
 	elif [ "$workload" = "mlc" ]; then
 	
 		# Starting sensor data collection
+		mkdir MLC/Results/${platform}_${date}
+		
 		if [ "$sensors" = "yes" ]; then
 			sh sensor_data.sh MLC/Results/${platform}_${date}/mlc_sensor_data_${platform}_${date}.txt &
 			sensor_process=$!
 		fi
-		
-		mkdir MLC/Results/${platform}_${date}
-		bash MLC/commands.txt >> MLC/Results/${platform}_${date}/report_${platform}_${date}.txt
+
+		bash MLC/commands.txt >> MLC/Results/${platform}_${date}/mlc_report_${platform}_${date}.txt
 		
 		# Ending sensor data collection
 		if [ "$sensors" = "yes" ]; then
@@ -100,14 +102,15 @@ do
 	
 	elif [ "$workload" = "multichase" ]; then
 	
+		mkdir MCML/Results/${platform}_${date}
+	
 		# Starting sensor data collection
 		if [ "$sensors" = "yes" ]; then
 			sh sensor_data.sh MCML/Results/${platform}_${date}/mcml_sensor_data_${platform}_${date}.txt &
 			sensor_process=$!
 		fi
 	
-		mkdir MCML/Results/${platform}_${date}
-		bash MCML/commands.txt >> MCML/Results/${platform}_${date}/report_${platform}_${date}.txt
+		bash MCML/commands.txt >> MCML/Results/${platform}_${date}/mcml_report_${platform}_${date}.txt
 		
 		# Ending sensor data collection
 		if [ "$sensors" = "yes" ]; then
