@@ -7,6 +7,10 @@ date=`date +"%m-%d-%y_%H-%M-%S"`
 echo ""
 read -p "What platform is the system running on? (intel or amd, default is amd): " platform
 
+if [ "$platform" = "" ]; then
+	platform="amd"
+fi
+
 
 if [ "$platform" = "intel" ]; then
 

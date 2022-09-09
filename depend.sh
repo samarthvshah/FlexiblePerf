@@ -82,6 +82,11 @@ if [ $has_multi = "false" ]; then
 	echo "\n" >> log/dependency_log_file_$date.txt
 fi
 
+chmod +x "src/multichase/multichase"
+chmod +x "src/multichase/multiload"
+chmod +x "src/multichase/fairness"
+chmod +x "src/multichase/pingpong"
+
 
 # MLC
 
